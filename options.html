@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chrome拡張機能 - 設定</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Chrome拡張機能 設定</h1>
+        <p>拡張機能の設定を管理できます</p>
+      </header>
+
+      <main>
+        <form id="settingsForm">
+          <div class="section">
+            <h2>基本設定</h2>
+
+            <div class="form-group">
+              <label for="userNumber">利用者番号</label>
+              <input
+                type="text"
+                id="userNumber"
+                name="userNumber"
+                placeholder="利用者番号を入力してください"
+                required
+              />
+              <small>この番号は拡張機能の動作に使用されます</small>
+            </div>
+          </div>
+
+          <div class="section">
+            <h2>動作設定</h2>
+
+            <div class="form-group">
+              <label class="checkbox-label">
+                <input type="checkbox" id="autoExecute" name="autoExecute" />
+                <span class="checkmark"></span>
+                自動実行を有効にする
+              </label>
+              <small>ページ読み込み時に自動的にアクションを実行します</small>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button type="submit" class="btn btn-primary">設定を保存</button>
+            <button type="button" id="resetButton" class="btn btn-secondary">
+              リセット
+            </button>
+          </div>
+        </form>
+      </main>
+
+      <div id="status" class="status hidden">設定が保存されました</div>
+    </div>
+
+    <script src="options.js"></script>
+  </body>
+</html>
